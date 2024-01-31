@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useNewsData = (category, searchTerm) => {
-    console.log('category',category);
-    console.log('searchTerm',searchTerm);
-    console.log('App opened');
+    //console.log('category',category);
+    //console.log('searchTerm',searchTerm);
+    //console.log('App opened');
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
