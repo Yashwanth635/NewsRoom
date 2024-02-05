@@ -17,6 +17,7 @@ const useNewsData = (category, searchTerm) => {
         //const apiKey = process.env.REACT_APP_GNEWS_API_KEY;
         //const apiUrl = `https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=${apiKey}`;
         const apiUrl = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=868eff1cf6b2c754da64a0ae4cfc7364';
+        //const apiUrl = ' https://newsapi.org/v2/everything?q=Apple&from=2024-01-31&sortBy=popularity&apiKey=565c9bd1d4ab4f4fbdc57210cabb0ac0';
         const categoryParam = category ? `&q=${category}` : "";
         const searchParam = searchTerm ? `&q=${searchTerm}` : "";
         const url = apiUrl + categoryParam + searchParam;
