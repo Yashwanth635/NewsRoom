@@ -62,6 +62,10 @@ import CustomPagination from './CustomPagination';
 import { connect } from 'react-redux';
 import HeartComponent from './HeartComponent';
 
+import React, { useState } from 'react';
+import { Card, Col, Container, Row } from 'react-bootstrap';
+import useNewsData from '../hooks/useNewsData';
+import CustomPagination from './CustomPagination';
 
 const NewsList = (props) => {
 
@@ -101,6 +105,14 @@ const NewsList = (props) => {
                 </div>
                 <Row>
                   <Col xs={6} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4} key={article.url} className="mb-4">
+            <Card style={{ height: '100%' }}>
+              <Card.Img src={article.image} variant="top" style={{ height: '200px', objectFit: 'cover' }} />
+              <Card.Body className="d-flex flex-column justify-content-between">
+                <div>
+                  <Card.Title>{article.title}</Card.Title>
+                  <Card.Text>{article.description}</Card.Text>
+                </div>
                 <Card.Link href={article.url}>Read More</Card.Link>
                 <HeartComponent article={article} />
                 </Col>
@@ -122,3 +134,12 @@ const NewsList = (props) => {
 
 
 export default NewsList;
+
+
+
+
+
+
+
+
+

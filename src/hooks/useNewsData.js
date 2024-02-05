@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useNewsData = (category, searchTerm) => {
-    console.log('category',category);
-    console.log('searchTerm',searchTerm);
-    console.log('App opened');
+    //console.log('category',category);
+    //console.log('searchTerm',searchTerm);
+    //console.log('App opened');
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const useNewsData = (category, searchTerm) => {
         const searchParam = searchTerm ? `&q=${searchTerm}` : "";
         const url = apiUrl + categoryParam + searchParam;
         //const url = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=868eff1cf6b2c754da64a0ae4cfc7364'
-        console.log(url)
+        //console.log(url)
         const response = await fetch(url);
         const data = await response.json();
 
