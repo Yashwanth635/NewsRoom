@@ -59,12 +59,9 @@ import React, { useState } from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import useNewsData from '../hooks/useNewsData';
 import CustomPagination from './CustomPagination';
-import { connect } from 'react-redux';
 import HeartComponent from './HeartComponent';
 
-
 const NewsList = (props) => {
-
   const { category, searchTerm } = props;
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 3;
@@ -99,12 +96,12 @@ const NewsList = (props) => {
                   <Card.Title>{article.title}</Card.Title>
                   <Card.Text>{article.description}</Card.Text>
                 </div>
-                <Row>
-                  <Col xs={6} md={6} lg={3}>
-                <Card.Link href={article.url}>Read More</Card.Link>
-                <HeartComponent article={article} />
-                </Col>
-                </Row>
+                <div className="d-flex justify-content-between align-items-center">
+                  <Button variant="link" href={article.url} target="_blank" rel="noopener noreferrer">
+                    Read More
+                  </Button>
+                  <HeartComponent article={article} />
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -120,5 +117,12 @@ const NewsList = (props) => {
   );
 };
 
-
 export default NewsList;
+
+
+
+
+
+
+
+
