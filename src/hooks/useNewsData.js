@@ -53,7 +53,7 @@ const useNewsData = (category, searchTerm) => {
       try {
         setLoading(true);
 
-        const apiUrl = 'https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=868eff1cf6b2c754da64a0ae4cfc7364';
+        const apiUrl = 'https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=25&apikey=868eff1cf6b2c754da64a0ae4cfc7364&expand=content';
         const categoryParam = category ? `&q=${category}` : "";
         const searchParam = searchTerm ? `&q=${searchTerm}` : "";
         const url = apiUrl + categoryParam + searchParam;
